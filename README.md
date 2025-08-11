@@ -7,7 +7,7 @@
   - [Introdução](#introdução)
   - [Python](#python)
     - [Bibliotecas](#bibliotecas)
-      - [NumPy](#numpy)
+      - [NumPy (app/numpy)](#numpy-appnumpy)
 
 ---
 
@@ -20,7 +20,7 @@ Ciência de Dados é uma área interdisciplinar que utiliza métodos científico
 ## Python
 ### Bibliotecas
 
-#### NumPy
+#### NumPy (app/numpy)
   * Numerical Python
     1. Focada em computação numérica de alta performance, é a base de praticamente todo ecossistema de Ciência de Dados, Machine Learning e estatística no Python. Escrita em C e Fortran por baixo dos panos, fazendo cálculos 100x mais rápidos que listas Python para operações numéricas.
     2. Ferramentas matemáticas avançadas;
