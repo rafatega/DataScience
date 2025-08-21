@@ -16,6 +16,13 @@
     - [Introdução Machine Learning](#introdução-machine-learning)
     - [O Fluxo](#o-fluxo)
     - [Casos de uso](#casos-de-uso)
+      - [Curto Prazo](#curto-prazo)
+      - [Longo Prazo](#longo-prazo)
+    - [Tipos de algoritmos](#tipos-de-algoritmos)
+      - [Aprendizado supervisionado](#aprendizado-supervisionado)
+      - [Aprendizado não supervisionado](#aprendizado-não-supervisionado)
+      - [Aprendizado por reforço](#aprendizado-por-reforço)
+  
 
 ---
 
@@ -61,18 +68,32 @@ flowchart LR
 ```
 
 #### Casos de uso
-  1. Curto Prazo
-     1. Classificação de e-mails como spam
-     2. Previsão de vendas
-     3. Análise de churn de clientes (quem vai cancelar)
-     4. Detecção de anomalias em transações financeiras
-     5. Recomendações de produtos
-  2. Longo Prazo
-     1. Veículos autônomos
-     2. Diagnóstico médico automatizado com imagens ou exames
-     3. Cérebro-Máquina
-     4. Cidades Autônomas
-     5. Modelos de Consciência Artificial Generalizada ☠
+##### Curto Prazo
+  1. Classificação de e-mails como spam
+  2. Previsão de vendas
+  3. Análise de churn de clientes (quem vai cancelar)
+  4. Detecção de anomalias em transações financeiras
+  5. Recomendações de produtos
+##### Longo Prazo
+  1. Veículos autônomos
+  2. Diagnóstico médico automatizado com imagens ou exames
+  3. Cérebro-Máquina
+  4. Cidades Autônomas
+  5. Modelos de Consciência Artificial Generalizada ☠
 
+#### Tipos de algoritmos
+##### Aprendizado supervisionado
+O algoritmo recebe entradas com as saídas corretas e ajusta o seu modelo de forma iterativa para que o mesmo se adapte as condições apresentadas no conjunto de dados de treino. Posteriormente, o algoritmo irá conferir a precisão do modelo criado usando o conjunto de dados de teste.
+
+  1. Dados de treino: você fornece uma base de dados com:
+     1. Informações de entrada `features` \(X\) (exemplo, idade, salário, investimentos, etc.)
+     2. A saída `target` correta, que você já sabe \(y\) (exemplo, se a pessoa contratou ou não um produto bancário)
+  2. Aprendizado: o modelo tenta encontrar algum padrão de \(X\) que consiga prever \(y\).
+  3. Predição: depois de treinado, o modelo pode prever os targets \(y\) de novos dados \(X\) que nunca viu antes.
+
+##### Aprendizado não supervisionado
+
+##### Aprendizado por reforço
+   
 
 ---
