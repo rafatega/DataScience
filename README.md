@@ -21,6 +21,12 @@
     - [Tipos de algoritmos](#tipos-de-algoritmos)
       - [Aprendizado supervisionado](#aprendizado-supervisionado)
         - [Regressão Linear](#regressão-linear)
+        - [1. Tabela Estendida](#1-tabela-estendida)
+        - [2. Cálculo do Coeficiente Angular ( B )](#2-cálculo-do-coeficiente-angular--b-)
+        - [3. Cálculo do Intercepto ( A )](#3-cálculo-do-intercepto--a-)
+        - [4. Equação da Reta de Regressão](#4-equação-da-reta-de-regressão)
+        - [5. Cálculo do Coeficiente de Correlação de Pearson ( r\_{xy} )](#5-cálculo-do-coeficiente-de-correlação-de-pearson--r_xy-)
+        - [Conclusão](#conclusão)
       - [Aprendizado não supervisionado](#aprendizado-não-supervisionado)
       - [Aprendizado por reforço](#aprendizado-por-reforço)
   
@@ -139,7 +145,12 @@ $$
 Tendo a seguinte tabela:
 <div style="display: flex; align-items: center; gap: 20px;">
 
-<!-- Tabela à esquerda -->
+<!-- Imagem à esquerda -->
+<div>
+  <img src="app/imagens/grafico_dispersao_regressao_linear.png" alt="Gráfico de Dispersão" width="550">
+</div>
+
+<!-- Tabela à direita -->
 <div>
 
 | x  | y  |
@@ -148,26 +159,110 @@ Tendo a seguinte tabela:
 | 2  | 5  |
 | -1 | -1 |
 | 4  | 9  |
-| 8  | 20 |
-
-</div>
-
-<!-- Imagem à direita -->
-<div>
-  <img src="app/imagens/grafico_dispersao_regressao_linear.png" alt="Gráfico de Dispersão" width="550">
-</div>
 
 </div>
 
 
 
-|n= 4| x  | y  | x² | y²  | xy |
-|----|----|----|----|-----|----|
-|    | 3  | 7  | 9  | 49  | 21 |
-|    | 2  | 5  | 4  | 25  | 10 |
-|    | -1 | -1 | 1  | 1   | 1  |
-|    | 4  | 9  | 16 | 81  | 36 |
-|SOMA| 8  | 20 | 64 | 400 | 160 |
+</div>
+
+##### 1. Tabela Estendida
+
+Para calcular manualmente os coeficientes da regressão linear, construímos uma tabela estendida com as colunas \( x^2 \), \( y^2 \) e \( xy \). Essa tabela fornece os valores necessários para aplicar as fórmulas da reta de regressão:
+
+\[
+y = A + Bx
+\]
+
+> Precisamos dos seguintes somatórios: \( \sum x \), \( \sum y \), \( \sum x^2 \), \( \sum y^2 \), \( \sum xy \), além da quantidade de dados \( n \).
+
+| x  | y  | \(x^2\) | \(y^2\) | \(xy\) |
+|----|----|--------|--------|--------|
+| 3  | 7  | 9      | 49     | 21     |
+| 2  | 5  | 4      | 25     | 10     |
+| -1 | -1 | 1      | 1      | 1      |
+| 4  | 9  | 16     | 81     | 36     |
+| **Soma** | **8** | **20** | **30** | **156** | **68** |
+
+Total de pontos: \( n = 4 \)
+
+---
+
+##### 2. Cálculo do Coeficiente Angular \( B \)
+
+\[
+B = \frac{n \sum xy - \sum x \sum y}{n \sum x^2 - (\sum x)^2}
+\]
+
+Substituindo os valores:
+
+\[
+B = \frac{4 \cdot 68 - 8 \cdot 20}{4 \cdot 30 - 8^2} = \frac{272 - 160}{120 - 64} = \frac{112}{56}
+\]
+
+\[
+\boxed{B = 2}
+\]
+
+---
+
+##### 3. Cálculo do Intercepto \( A \)
+
+\[
+A = \frac{\sum y - B \sum x}{n}
+\]
+
+\[
+A = \frac{20 - 2 \cdot 8}{4} = \frac{20 - 16}{4} = \frac{4}{4}
+\]
+
+\[
+\boxed{A = 1}
+\]
+
+---
+
+##### 4. Equação da Reta de Regressão
+
+Com \( A = 1 \) e \( B = 2 \), temos:
+
+\[
+\boxed{y = 1 + 2x}
+\]
+
+---
+
+##### 5. Cálculo do Coeficiente de Correlação de Pearson \( r_{xy} \)
+
+A fórmula de Pearson mede a intensidade da relação linear entre \( x \) e \( y \):
+
+\[
+r_{xy} = \frac{n \sum xy - \sum x \sum y}
+{\sqrt{n \sum x^2 - (\sum x)^2} \cdot \sqrt{n \sum y^2 - (\sum y)^2}}
+\]
+
+\[
+r_{xy} = \frac{4 \cdot 68 - 8 \cdot 20}
+{\sqrt{4 \cdot 30 - 8^2} \cdot \sqrt{4 \cdot 156 - 20^2}}
+\]
+
+\[
+r_{xy} = \frac{272 - 160}
+{\sqrt{120 - 64} \cdot \sqrt{624 - 400}} = \frac{112}{\sqrt{56} \cdot \sqrt{224}}
+\]
+
+\[
+\boxed{r_{xy} = 1}
+\]
+
+---
+
+##### Conclusão
+
+- A equação da reta é: \( y = 1 + 2x \)
+- O coeficiente de correlação \( r = 1 \) indica **correlação linear perfeita positiva**, os pontos estão exatamente sobre a reta ajustada.
+
+ 
 
 
 
