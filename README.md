@@ -95,7 +95,8 @@ O algoritmo recebe entradas com as saídas corretas e ajusta o seu modelo de for
 
 ##### Regressão Linear
 *Conteúdo prático em `app\algoritmos\supervisionado\algoritmoRegressaoLinear.ipynb`*
-
+"A arte, como a moral, consiste em determinar limites."[^1]
+[^1] G. K. Chesterton
 
 
 #### Aprendizado não supervisionado
