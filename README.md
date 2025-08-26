@@ -96,7 +96,79 @@ O algoritmo recebe entradas com as saídas corretas e ajusta o seu modelo de for
 ##### Regressão Linear
 *Conteúdo prático em `app\algoritmos\supervisionado\algoritmoRegressaoLinear.ipynb`*
 "A arte, como a moral, consiste em determinar limites."[^1]
-[^1] G. K. Chesterton
+[^1]: G. K. Chesterton
+
+Regressão linear é uma técnica estatística usada para modelar a relação entre uma variável `target` e uma ou mais variáveis `features`. O objetivo principal é prever ou estimar o valor da variável `target` com base nos valores das variáveis `features`. O que buscamos ao aplicar a regressão linear é ajustar uma linha reta que melhor represente a tendência dos dados, ou seja, que passe o mais próximo possível dos pontos observados. Esse processo envolve minimizar a soma das distâncias verticais (erros) entre os pontos reais e a linha ajustada — um método conhecido como mínimos quadrados.
+
+* Podendo ser utilizada em diversos casos
+  1. Imobiliário
+     1. Previsão de preços de imóveis com base em características como tamanho, localização, número de quartos, idade do imóvel, etc.
+  2. Finanças
+     1. Projeção de lucros ou receitas futuras com base em dados históricos.
+     2. Modelagem do retorno de ações com base em indicadores econômicos ou financeiros.
+     3. Análise de risco de crédito considerando renda, idade, histórico de dívidas, etc.
+  3. Saúde
+     1. Previsão do tempo de recuperação de pacientes com base em idade, tipo de cirurgia, condição clínica.
+     2. Relação entre pressão arterial e idade, peso ou nível de atividade física.
+
+---
+
+* Fórmulas
+
+  *Equação da reta*, primeiro \(B\) é calculado, pois, \(A\) precisa de \(B\).
+$$
+y = A + Bx
+$$
+
+  *Coeficiente Angular (B):*
+$$
+B = \frac{n \sum x_i y_i - \sum x_i \sum y_i}{n \sum x_i^2 - \left( \sum x_i \right)^2}
+$$
+
+  *Intercepto (A):*
+$$
+A = \frac{\sum y - B \sum x}{n}
+$$
+
+*Coeficiente de correlação de Pearson:*
+$$
+r_{xy} = \frac{n \sum x_i y_i - \sum x_i \sum y_i}{\sqrt{n \sum x_i^2 - \left( \sum x_i \right)^2} \cdot \sqrt{n \sum y_i^2 - \left( \sum y_i \right)^2}}
+$$
+
+* Exemplo prático
+Tendo a seguinte tabela:
+<div style="display: flex; align-items: center; gap: 20px;">
+
+<!-- Tabela à esquerda -->
+<div>
+
+| x  | y  |
+|----|----|
+| 3  | 7  |
+| 2  | 5  |
+| -1 | -1 |
+| 4  | 9  |
+| 8  | 20 |
+
+</div>
+
+<!-- Imagem à direita -->
+<div>
+  <img src="app/imagens/grafico_dispersao_regressao_linear.png" alt="Gráfico de Dispersão" width="550">
+</div>
+
+</div>
+
+
+
+|n= 4| x  | y  | x² | y²  | xy |
+|----|----|----|----|-----|----|
+|    | 3  | 7  | 9  | 49  | 21 |
+|    | 2  | 5  | 4  | 25  | 10 |
+|    | -1 | -1 | 1  | 1   | 1  |
+|    | 4  | 9  | 16 | 81  | 36 |
+|SOMA| 8  | 20 | 64 | 400 | 160 |
+
 
 
 #### Aprendizado não supervisionado
