@@ -116,6 +116,14 @@ Regressão linear é uma técnica estatística usada para modelar a relação en
   3. Saúde
      1. Previsão do tempo de recuperação de pacientes com base em idade, tipo de cirurgia, condição clínica.
      2. Relação entre pressão arterial e idade, peso ou nível de atividade física.
+   
+* Tipos de modelo
+  1. Simples: Quando tem 1 variável independente
+     1. Linear
+     2. Não linear
+  2. Multiplo: Quando tem 2 ou mais variáveis independente
+     1. Linear
+     2. Não linear
 
 ---
 
